@@ -5,6 +5,7 @@ import (
 	"errors"
 	"io/fs"
 	"log/slog"
+	"net/http"
 	"net/url"
 	"os"
 	"path"
@@ -86,6 +87,20 @@ func main() {
 		slog.Error("Error creating clientset", slog.String("Error", err.Error()))
 		os.Exit(1)
 	}
+	go func() {
+		mux := http.NewServeMux()
+		mux.HandleFunc("/readyz", func(w http.ResponseWriter, r *http.Request) {
+			w.WriteHeader(200)
+		})
+		mux.HandleFunc("/healthz", func(w http.ResponseWriter, r *http.Request) {
+			w.WriteHeader(200)
+		})
+		err := http.ListenAndServe(":8080", mux)
+		if err != nil {
+			slog.Error("Error starting healthcheck server", slog.String("Error", err.Error()))
+			os.Exit(1)
+		}
+	}()
 	for {
 		nodes, err := clientset.CoreV1().Nodes().List(context.TODO(), metav1.ListOptions{})
 
