@@ -1,0 +1,11 @@
+services:
+  proxmox-k8s-sync:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ${HOME}/.kube/config:/home/nonroot/.kube/config:ro
+    environment:
+      - PROXMOX_URL=${PROXMOX_URL}
+      - PROXMOX_USERNAME=${PROXMOX_USERNAME}
+      - PROXMOX_PASSWORD=${PROXMOX_PASSWORD}
