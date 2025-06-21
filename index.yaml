@@ -3,6 +3,26 @@ entries:
   proxmox-k8s-sync:
   - apiVersion: v2
     appVersion: v1.0.1
+    created: "2025-06-21T09:37:14.754431931-05:00"
+    description: A Helm chart for Kubernetes
+    digest: 9279538ed4165d9ad342c3325a2d876503947048d49040927f7f6fa9e6cc74cc
+    name: proxmox-k8s-sync
+    type: application
+    urls:
+    - https://github.com/NachoxMacho/proxmox-k8s-sync/releases/download/proxmox-k8s-sync-0.1.2/proxmox-k8s-sync-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: v1.0.1
+    created: "2025-06-21T09:37:14.629691949-05:00"
+    description: A Helm chart for Kubernetes
+    digest: f7e697f17ad5226fc1f996afeb6e89948dce8b69e3fe9f2351260658eedabc42
+    name: proxmox-k8s-sync
+    type: application
+    urls:
+    - https://github.com/NachoxMacho/proxmox-k8s-sync/releases/download/proxmox-k8s-sync-0.1.1/proxmox-k8s-sync-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: v1.0.1
     created: "2025-06-15T10:10:24.590331321-05:00"
     description: A Helm chart for Kubernetes
     digest: f9ca734664e7a6abd9e8b3d468ef19d6bc01eed9aa9925075a96f88007425d0d
@@ -11,4 +31,4 @@ entries:
     urls:
     - https://github.com/NachoxMacho/proxmox-k8s-sync/releases/download/proxmox-k8s-sync-0.1.0/proxmox-k8s-sync-0.1.0.tgz
     version: 0.1.0
-generated: "2025-06-20T22:24:38.630026435-05:00"
+generated: "2025-06-21T09:37:14.754439436-05:00"
