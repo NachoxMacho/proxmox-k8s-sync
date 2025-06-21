@@ -65,8 +65,8 @@ jobs:
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           CR_SKIP_EXISTING: true
-          CR_OWNER: "${{ GITHUB_REPOSITORY_OWNER }}"
-          CR_GIT_REPO: "${{ GITHUB_REPOSITORY }}"
+          CR_OWNER: "${{ github.repository_owner }}"
+          CR_GIT_REPO: "proxmox-k8s-sync"
 
       # This step generates an artifact attestation for the image, which is an unforgeable statement about where and how it was built. It increases supply chain security for people who consume the image. For more information, see [Using artifact attestations to establish provenance for builds](/actions/security-guides/using-artifact-attestations-to-establish-provenance-for-builds).
       - name: Generate artifact attestation
