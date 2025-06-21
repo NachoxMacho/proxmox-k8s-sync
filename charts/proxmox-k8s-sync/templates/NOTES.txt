@@ -1,1 +1,1 @@
-Proxmox K8s Sync has been installed
+Proxmox K8s Sync has been installed.
