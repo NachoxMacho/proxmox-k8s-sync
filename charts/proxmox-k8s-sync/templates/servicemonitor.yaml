@@ -1,0 +1,14 @@
+{{- if .Values.metrics.serviceMonitor.enabled }}
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: {{ include "proxmox-k8s-sync.fullname" . }}
+spec:
+  endpoints:
+  - path: /metrics
+    port: http
+    interval: 2m
+  selector:
+    matchLabels:
+       {{ include "proxmox-k8s-sync.selectorLabels" . }}
+{{- end }}

@@ -34,19 +34,23 @@ serviceAccount:
 rbac:
   create: true
 
-env:
-  - name: PROXMOX_URL
-    value: https://proxmox.robowens.dev
-  - name: PROXMOX_TOKEN_ID
-    valueFrom:
-      secretKeyRef:
-        name: proxmox-creds
-        key: proxmox-token-id
-  - name: PROXMOX_TOKEN_SECRET
-    valueFrom:
-      secretKeyRef:
-        name: proxmox-creds
-        key: proxmox-token-secret
+env: []
+#   - name: PROXMOX_URL
+#     value: https://proxmox.example.com
+#   - name: PROXMOX_TOKEN_ID
+#     valueFrom:
+#       secretKeyRef:
+#         name: proxmox-creds
+#         key: proxmox-token-id
+#   - name: PROXMOX_TOKEN_SECRET
+#     valueFrom:
+#       secretKeyRef:
+#         name: proxmox-creds
+#         key: proxmox-token-secret
+#   - name: OTEL_ENDPOINT
+#     value: http://alloy.alloy:4318
+#   - name: PYROSCOPE_ADDR
+#     value: http://pyroscope.pyroscope:4040
 
 
 # This is for setting Kubernetes Annotations to a Pod.
@@ -116,3 +120,7 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+metrics:
+  serviceMonitor:
+    enabled: false
