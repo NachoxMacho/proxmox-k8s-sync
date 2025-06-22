@@ -7,8 +7,7 @@ spec:
   endpoints:
   - path: /metrics
     port: http
-    interval: 2m
   selector:
     matchLabels:
-       {{ include "proxmox-k8s-sync.selectorLabels" . }}
+       {{ include "proxmox-k8s-sync.selectorLabels" . | nindent 6 }}
 {{- end }}
