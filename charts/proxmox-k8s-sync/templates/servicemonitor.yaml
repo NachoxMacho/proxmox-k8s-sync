@@ -9,5 +9,5 @@ spec:
     port: http
   selector:
     matchLabels:
-       {{ include "proxmox-k8s-sync.selectorLabels" . | nindent 6 }}
+      {{- include "proxmox-k8s-sync.selectorLabels" . | nindent 6 }}
 {{- end }}
