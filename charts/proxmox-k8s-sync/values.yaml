@@ -123,4 +123,4 @@ affinity: {}
 
 metrics:
   serviceMonitor:
-    enabled: false
+    enabled: true
